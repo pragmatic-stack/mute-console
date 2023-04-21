@@ -4,7 +4,7 @@
   },
   "npm": {
     "publish": true,
-    "publishPath": ".",
+    "publishPath": "dist",
     "publishArgs": [],
     "tag": null,
     "otp": null,
@@ -13,9 +13,5 @@
     "versionArgs": [],
     "skipChecks": false,
     "timeout": 10
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
   }
 }

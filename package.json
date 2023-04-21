@@ -1,7 +1,7 @@
 {
   "name": "@pragmaticstack/mute-console",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/mute-console.umd.cjs",
   "module": "./dist/mute-console.js",
@@ -27,5 +27,9 @@
   },
   "dependencies": {
     "format-util": "^1.0.5"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
