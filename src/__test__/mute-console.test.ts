@@ -77,6 +77,19 @@ it('should log to console when pattern is not matched', () => {
     consoleSpy.mockRestore();
 })
 
+it('should not intercept when muting is disabled', () => {
+    const consoleSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn)
+
+    muteConsole(['Hi'], { disabled: process.env && process.env.NODE_ENV === 'test'}).start();
+
+    console.log('Hi')
+    console.log('Hello');
+
+    expect(consoleSpy).toHaveBeenCalledWith('Hi');
+    expect(consoleSpy).toHaveBeenCalledWith('Hello');
+    consoleSpy.mockRestore();
+})
+
 it('should log start message if not in test environment', () => {
     process.env.NODE_ENV = 'development';
     const consoleGroupSpy = jest.spyOn(console, 'groupCollapsed').mockImplementation(jest.fn)

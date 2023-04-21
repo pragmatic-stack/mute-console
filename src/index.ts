@@ -1,10 +1,15 @@
 import format from 'format-util';
 import {Options, Settings} from "./types";
 
+const defaults: Settings = {
+    console,
+    methods: ['log', 'debug', 'info', 'warn', 'error'],
+    disabled: false,
+}
+
 export const muteConsole = (excludePatterns: Array<string | RegExp | ((output: string) => boolean)>, options?: Options) => {
-    const { console: consoleObject, methods }: Settings = {
-        console,
-        methods: ['log', 'debug', 'info', 'warn', 'error'],
+    const { console: consoleObject, methods, disabled }: Settings = {
+        ...defaults,
         ...options,
     };
 
@@ -42,7 +47,7 @@ export const muteConsole = (excludePatterns: Array<string | RegExp | ((output: s
     };
 
     const start = (condition = true) => {
-        if (condition) {
+        if (condition && !disabled) {
             printStartMessage();
 
             for (const method of methods) {
