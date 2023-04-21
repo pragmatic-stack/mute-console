@@ -1,5 +1,8 @@
 import {muteConsole} from "../index";
 
+beforeEach(() => {
+    process.env.NODE_ENV = 'test';
+})
 
 it('should not invoke console methods when muteConsole is started', () => {
     const logSpy = jest.spyOn(console, 'log')
@@ -95,7 +98,20 @@ it('should log start message if not in test environment', () => {
     const consoleGroupSpy = jest.spyOn(console, 'groupCollapsed').mockImplementation(jest.fn)
     const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn)
 
-    muteConsole(['Hi']).start();
+    muteConsole(['Hi'], ).start();
+
+    expect(consoleGroupSpy).toHaveBeenCalledWith('[MC] Console muting enabled.')
+    consoleGroupSpy.mockRestore();
+    consoleLogSpy.mockRestore();
+})
+
+
+it('should log start message if explicitly configured', () => {
+    console.log(process.env.NODE_ENV)
+    const consoleGroupSpy = jest.spyOn(console, 'groupCollapsed').mockImplementation(jest.fn)
+    const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn)
+
+    muteConsole(['Hi'], { logStart: true } ).start();
 
     expect(consoleGroupSpy).toHaveBeenCalledWith('[MC] Console muting enabled.')
     consoleGroupSpy.mockRestore();

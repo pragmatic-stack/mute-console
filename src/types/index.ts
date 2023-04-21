@@ -21,6 +21,12 @@ export type Options = {
      @default false
      */
     disabled?: boolean;
+
+    /**
+     Flag to configure printing of a start message with contextual information.
+     @default false for NODE_ENV test, true for the rest
+     */
+    logStart?: boolean;
 };
 
 export type Settings = Required<Options>;
