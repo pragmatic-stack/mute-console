@@ -2,6 +2,9 @@
 
 Mute Console is an npm package that provides a utility to mute console outputs for console methods in both browser and node environments. It is designed to be easy to use, customizable, and flexible. With this package, you can selectively mute console outputs for specific patterns or functions.
 
+# Why?
+When developing applications, there are often times when we need to focus on specific parts of the code and want to mute console outputs to reduce noise. Additionally, when working with 3rd party libraries, we may not have control over their console outputs and want to mute them to improve the overall readability of our logs. The Mute Console package provides an easy and customizable way to selectively mute console outputs, allowing developers to focus on what matters most.
+
 ## Installation
 
 To install the package, simply run:
