@@ -1,0 +1,31 @@
+{
+  "name": "@pragmatic-stack/mute-console",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/mute-console.umd.cjs",
+  "module": "./dist/mute-console.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/mute-console..js",
+      "require": "./dist/mute-console.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@types/format-util": "^1.0.2",
+    "@types/node": "^18.15.13",
+    "release-it": "^15.10.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.0",
+    "vite-plugin-dts": "^2.3.0"
+  },
+  "dependencies": {
+    "format-util": "^1.0.5"
+  }
+}
