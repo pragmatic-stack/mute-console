@@ -1,6 +1,6 @@
 {
-  "name": "@pragmatic-stack/mute-console",
-  "private": true,
+  "name": "@pragmaticstack/mute-console",
+  "private": false,
   "version": "0.0.2",
   "type": "module",
   "main": "./dist/mute-console.umd.cjs",

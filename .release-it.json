@@ -1,4 +1,7 @@
 {
+  "hooks": {
+    "after:bump": "npm run build"
+  },
   "npm": {
     "publish": true,
     "publishPath": ".",
@@ -10,5 +13,9 @@
     "versionArgs": [],
     "skipChecks": false,
     "timeout": 10
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
