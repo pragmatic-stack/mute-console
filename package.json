@@ -8,7 +8,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/mute-console..js",
+      "import": "./dist/mute-console.js",
       "require": "./dist/mute-console.umd.cjs"
     }
   },
