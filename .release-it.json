@@ -1,6 +1,12 @@
 {
   "hooks": {
+    "before:init": [
+      "npm run test"
+    ],
     "after:bump": "npm run build"
+  },
+  "git": {
+    "commitMessage": "chore: release v${version}"
   },
   "npm": {
     "publish": true,

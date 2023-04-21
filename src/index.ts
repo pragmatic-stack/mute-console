@@ -5,10 +5,11 @@ const defaults: Settings = {
     console,
     methods: ['log', 'debug', 'info', 'warn', 'error'],
     disabled: false,
+    printStartMessage: process.env && process.env.NODE_ENV !== 'test'
 }
 
 export const muteConsole = (excludePatterns: Array<string | RegExp | ((output: string) => boolean)>, options?: Options) => {
-    const { console: consoleObject, methods, disabled }: Settings = {
+    const { console: consoleObject, methods, disabled, ...restSettings }: Settings = {
         ...defaults,
         ...options,
     };
@@ -34,7 +35,7 @@ export const muteConsole = (excludePatterns: Array<string | RegExp | ((output: s
     };
 
     const printStartMessage = () => {
-        if (process.env && process.env.NODE_ENV !== 'test') {
+        if (restSettings.printStartMessage) {
             const c = consoleObject;
             c.groupCollapsed('[MC] Console muting enabled.');
             c.log('Muting methods:', JSON.stringify(methods));
