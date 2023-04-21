@@ -6,6 +6,7 @@
   "main": "./dist/mute-console.umd.cjs",
   "module": "./dist/mute-console.js",
   "types": "./dist/index.d.ts",
+  "repository": "https://github.com/pragmatic-stack/mute-console",
   "exports": {
     ".": {
       "import": "./dist/mute-console.js",
