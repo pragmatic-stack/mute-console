@@ -1,7 +1,7 @@
 {
   "name": "@pragmaticstack/mute-console",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "main": "./dist/mute-console.umd.cjs",
   "module": "./dist/mute-console.js",
@@ -12,6 +12,7 @@
       "require": "./dist/mute-console.umd.cjs"
     }
   },
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
