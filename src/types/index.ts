@@ -15,6 +15,12 @@ export type Options = {
      @default console
      */
     console?: Console;
+
+    /**
+     Flag to be passed to disable muting.
+     @default false
+     */
+    disabled?: boolean;
 };
 
 export type Settings = Required<Options>;
